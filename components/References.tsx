@@ -5,10 +5,10 @@ const tags = [
 ];
 
 const beforeAfter = [
-  { metric: "Správa termínů", before: "Ručně přes SMS/telefon", after: "Online rezervační systém" },
-  { metric: "Kapacita hřiště", before: "Neviditelná, časté přetížení", after: "Semafor v reálném čase" },
-  { metric: "Aktualizace cen & info", before: "Zásah programátora", after: "Editace v Google Sheets" },
-  { metric: "Mobilní zobrazení", before: "Nefunkční na mobilu", after: "Plně responzivní" },
+  { before: "Žádný web", after: "Profesionální web s mobilním designem" },
+  { before: "Manuální registrace", after: "Automatický registrační systém" },
+  { before: "Žádný přehled obsazenosti", after: "Real-time kapacitní semafor" },
+  { before: "Fotky závislé na vývojáři", after: "Samostatná správa přes Google Sheets" },
 ];
 
 export default function References() {
@@ -94,23 +94,19 @@ export default function References() {
             {/* Tabulka — desktop */}
             <div className="hidden md:block rounded-2xl overflow-hidden border border-[#1a3a2a]/10">
               {/* Hlavička tabulky */}
-              <div className="grid grid-cols-3 text-xs font-bold uppercase tracking-wider">
-                <div className="bg-[#1a3a2a]/5 text-[#1a3a2a]/50 px-5 py-3">Oblast</div>
+              <div className="grid grid-cols-2 text-xs font-bold uppercase tracking-wider">
                 <div className="bg-[#f5f0e8] text-[#1a3a2a]/50 px-5 py-3">Před</div>
                 <div className="bg-[#1a3a2a] text-[#c9a84c] px-5 py-3">Po</div>
               </div>
               {/* Řádky */}
               {beforeAfter.map((row, i) => (
                 <div
-                  key={row.metric}
-                  className={`grid grid-cols-3 text-sm ${
+                  key={row.before}
+                  className={`grid grid-cols-2 text-sm ${
                     i % 2 === 0 ? "bg-white" : "bg-[#1a3a2a]/3"
                   }`}
                 >
-                  <div className="px-5 py-4 font-medium text-[#1a3a2a]">
-                    {row.metric}
-                  </div>
-                  <div className="px-5 py-4 text-[#1a3a2a]/50 border-l border-[#1a3a2a]/8">
+                  <div className="px-5 py-4 text-[#1a3a2a]/50">
                     {row.before}
                   </div>
                   <div className="px-5 py-4 text-[#1a3a2a] font-medium bg-[#1a3a2a]/5 border-l border-[#1a3a2a]/8">
@@ -124,17 +120,16 @@ export default function References() {
             <div className="flex flex-col gap-3 md:hidden">
               {beforeAfter.map((row) => (
                 <div
-                  key={row.metric}
+                  key={row.before}
                   className="rounded-2xl border border-[#1a3a2a]/10 bg-white px-5 py-4"
                 >
-                  <p className="font-bold text-[#1a3a2a] text-sm mb-3">{row.metric}</p>
                   <div className="flex flex-col gap-1.5">
-                    <div>
-                      <span className="text-xs font-bold uppercase tracking-wider text-[#1a3a2a]/40 mr-2">Před</span>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-xs font-bold uppercase tracking-wider text-[#1a3a2a]/40 w-12 shrink-0">Před</span>
                       <span className="text-sm text-[#1a3a2a]/50">{row.before}</span>
                     </div>
-                    <div>
-                      <span className="text-xs font-bold uppercase tracking-wider text-[#2d5a42] mr-2">Po</span>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-xs font-bold uppercase tracking-wider text-[#2d5a42] w-12 shrink-0">Po</span>
                       <span className="text-sm text-[#2d5a42] font-medium">{row.after}</span>
                     </div>
                   </div>
@@ -154,6 +149,15 @@ export default function References() {
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </a>
+            </div>
+
+            {/* Recenze klienta */}
+            <div className="mt-8 border-t border-[#1a3a2a]/10 pt-8">
+              <span className="text-3xl font-serif text-[#c9a84c] leading-none">&ldquo;</span>
+              <p className="italic text-[#1a3a2a]/70 text-sm leading-relaxed mt-1">
+                Citát klienta bude doplněn.
+              </p>
+              <p className="mt-3 text-sm font-semibold text-[#1a3a2a]">— CQB HELL</p>
             </div>
           </div>
 
