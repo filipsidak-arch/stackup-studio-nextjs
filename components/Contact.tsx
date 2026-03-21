@@ -156,6 +156,10 @@ export default function Contact() {
       {/* Footer */}
       <div className="max-w-5xl mx-auto mt-20 pt-8 border-t border-[#1a3a2a]/15 text-center text-sm text-[#1a3a2a]/40">
         © {new Date().getFullYear()} Stackup Studio · Filip Šidák
+        <span className="mx-2">·</span>
+        <a href="/gdpr" className="hover:text-[#c9a84c] transition-colors">
+          Zásady ochrany osobních údajů
+        </a>
       </div>
     </section>
   );
