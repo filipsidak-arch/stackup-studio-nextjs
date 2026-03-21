@@ -25,24 +25,15 @@ export default function References() {
         {/* Case study karta */}
         <div className="bg-white rounded-3xl overflow-hidden shadow-md border border-[#1a3a2a]/8">
 
-          {/* Screenshot placeholder */}
-          <div className="relative h-52 md:h-72 bg-[#1a3a2a] flex items-center justify-center">
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-2xl bg-[#c9a84c]/20 border border-[#c9a84c]/40 flex items-center justify-center mx-auto mb-4">
-                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="2" y="5" width="24" height="18" rx="2" stroke="#c9a84c" strokeWidth="1.5"/>
-                  <path d="M2 10h24" stroke="#c9a84c" strokeWidth="1.5"/>
-                  <circle cx="6" cy="7.5" r="1" fill="#c9a84c"/>
-                  <circle cx="9.5" cy="7.5" r="1" fill="#c9a84c"/>
-                  <circle cx="13" cy="7.5" r="1" fill="#c9a84c"/>
-                </svg>
-              </div>
-              <p className="text-[#f5f0e8]/50 text-sm">Náhled webu</p>
-              <p className="text-[#c9a84c] font-semibold text-lg mt-1">cqbhell.cz</p>
-            </div>
-            {/* Zlatý pruh vlevo */}
-            <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#c9a84c]" />
-          </div>
+          {/* Screenshot */}
+          <a href="https://cqbhell.cz" target="_blank" rel="noopener noreferrer" className="block relative h-80">
+            <img
+              src="/cqbhell-preview.webp"
+              alt="Náhled webu cqbhell.cz"
+              className="w-full h-full object-cover rounded-t-2xl"
+              style={{ objectPosition: "center 15%" }}
+            />
+          </a>
 
           {/* Hlavička projektu */}
           <div className="px-8 md:px-12 py-8 border-b border-[#1a3a2a]/8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
