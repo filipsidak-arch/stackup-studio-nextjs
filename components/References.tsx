@@ -100,7 +100,8 @@ export default function References() {
             </div>
             <h4 className="text-lg font-bold text-[#1a3a2a] mb-5">Výsledky</h4>
 
-            <div className="rounded-2xl overflow-hidden border border-[#1a3a2a]/10">
+            {/* Tabulka — desktop */}
+            <div className="hidden md:block rounded-2xl overflow-hidden border border-[#1a3a2a]/10">
               {/* Hlavička tabulky */}
               <div className="grid grid-cols-3 text-xs font-bold uppercase tracking-wider">
                 <div className="bg-[#1a3a2a]/5 text-[#1a3a2a]/50 px-5 py-3">Oblast</div>
@@ -123,6 +124,28 @@ export default function References() {
                   </div>
                   <div className="px-5 py-4 text-[#1a3a2a] font-medium bg-[#1a3a2a]/5 border-l border-[#1a3a2a]/8">
                     {row.after}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Karty — mobil */}
+            <div className="flex flex-col gap-3 md:hidden">
+              {beforeAfter.map((row) => (
+                <div
+                  key={row.metric}
+                  className="rounded-2xl border border-[#1a3a2a]/10 bg-white px-5 py-4"
+                >
+                  <p className="font-bold text-[#1a3a2a] text-sm mb-3">{row.metric}</p>
+                  <div className="flex flex-col gap-1.5">
+                    <div>
+                      <span className="text-xs font-bold uppercase tracking-wider text-[#1a3a2a]/40 mr-2">Před</span>
+                      <span className="text-sm text-[#1a3a2a]/50">{row.before}</span>
+                    </div>
+                    <div>
+                      <span className="text-xs font-bold uppercase tracking-wider text-[#2d5a42] mr-2">Po</span>
+                      <span className="text-sm text-[#2d5a42] font-medium">{row.after}</span>
+                    </div>
                   </div>
                 </div>
               ))}

@@ -2,9 +2,14 @@ export default function About() {
   return (
     <section id="o-mne" className="py-24 bg-[#f5f0e8] px-6">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
-        {/* Foto placeholder */}
-        <div className="shrink-0 w-48 h-48 rounded-full bg-[#1a3a2a]/10 border-2 border-[#c9a84c] flex items-center justify-center">
-          <span className="text-5xl font-bold text-[#1a3a2a]/30">FŠ</span>
+        {/* Foto */}
+        <div className="shrink-0 w-48 h-48 rounded-full border-2 border-[#c9a84c] overflow-hidden">
+          <img
+            src="/IMG_3853.webp"
+            alt="Filip Šidák"
+            className="w-full h-full object-cover"
+            style={{ objectPosition: "center 20%" }}
+          />
         </div>
 
         {/* Text */}
