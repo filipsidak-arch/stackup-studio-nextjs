@@ -38,7 +38,7 @@ export default function Contact() {
 
   const reveal = (delay = 0) => ({
     className: `transition-[opacity,transform] duration-700 ease-smooth ${
-      inView ? "opacity-100 translate-y-0" : "opacity-[0.01] translate-y-3"
+      inView ? "opacity-100 translate-y-0" : "opacity-[0.01] translate-y-7"
     }`,
     style: {
       transitionDelay: inView ? `${delay}ms` : "0ms",
@@ -47,7 +47,7 @@ export default function Contact() {
   });
 
   return (
-    <section id="kontakt" className="py-24 bg-beige px-6">
+    <section id="kontakt" className="py-24 bg-beige px-6 section-enter">
       <div ref={ref} className="max-w-5xl mx-auto">
         <div className={reveal(0).className} style={reveal(0).style}>
           <p className="text-forest text-sm font-medium tracking-[0.2em] uppercase mb-3 text-center">
@@ -58,15 +58,13 @@ export default function Contact() {
           </h2>
         </div>
 
-        <div
-          className={`grid md:grid-cols-2 gap-12 ${reveal(150).className}`}
-          style={reveal(150).style}
-        >
-          {/* Kontaktní info */}
+        <div className="grid md:grid-cols-2 gap-12">
+          {/* Kontaktní info — každá položka staggeruje zvlášť */}
           <div className="flex flex-col gap-6 justify-center">
             <a
               href="mailto:filip@stackupstudio.cz"
-              className="flex items-center gap-4 group"
+              className={`flex items-center gap-4 group ${reveal(150).className}`}
+              style={reveal(150).style}
             >
               <div className="w-12 h-12 rounded-full bg-forest flex items-center justify-center shrink-0 transition-transform duration-150 ease-smooth group-hover:scale-110">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-gold">
@@ -85,7 +83,8 @@ export default function Contact() {
               href="https://linkedin.com/in/filipsidak"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 group"
+              className={`flex items-center gap-4 group ${reveal(270).className}`}
+              style={reveal(270).style}
             >
               <div className="w-12 h-12 rounded-full bg-forest flex items-center justify-center shrink-0 transition-transform duration-150 ease-smooth group-hover:scale-110">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-gold">
@@ -103,7 +102,7 @@ export default function Contact() {
           </div>
 
           {/* Formulář */}
-          <div aria-live="polite">
+          <div aria-live="polite" className={reveal(150).className} style={reveal(150).style}>
             {sent ? (
               <div className="flex items-center justify-center bg-forest rounded-2xl p-10 text-center">
                 <div>

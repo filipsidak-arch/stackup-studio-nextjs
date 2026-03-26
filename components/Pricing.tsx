@@ -49,23 +49,37 @@ const plans = [
 export default function Pricing() {
   const { ref, inView } = useInView();
 
+  const reveal = (delay = 0) => ({
+    className: `transition-[opacity,transform] duration-700 ease-smooth ${
+      inView ? "opacity-100 translate-y-0" : "opacity-[0.01] translate-y-7"
+    }`,
+    style: {
+      transitionDelay: inView ? `${delay}ms` : "0ms",
+      willChange: "opacity, transform",
+    },
+  });
+
   return (
-    <section id="cenik" className="py-24 bg-forest px-6">
+    <section id="cenik" className="py-24 bg-forest px-6 section-enter">
       <div ref={ref} className="max-w-5xl mx-auto">
-        {/* Hlavička */}
-        <div
-          className={`transition-[opacity,transform] duration-700 ease-smooth ${
-            inView ? "opacity-100 translate-y-0" : "opacity-[0.01] translate-y-3"
-          }`}
-          style={{ willChange: "opacity, transform" }}
-        >
-          <p className="text-gold text-sm font-medium tracking-[0.2em] uppercase mb-3 text-center">
+        {/* Hlavička — každý element staggeruje zvlášť */}
+        <div className="text-center mb-14">
+          <p
+            className={`text-gold text-sm font-medium tracking-[0.2em] uppercase mb-3 ${reveal(0).className}`}
+            style={reveal(0).style}
+          >
             Ceník
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-beige text-center mb-4">
+          <h2
+            className={`text-3xl md:text-4xl font-bold text-beige mb-4 ${reveal(90).className}`}
+            style={reveal(90).style}
+          >
             Transparentní ceny
           </h2>
-          <p className="text-beige/60 text-center mb-14">
+          <p
+            className={`text-beige/60 ${reveal(180).className}`}
+            style={reveal(180).style}
+          >
             Měsíční správa webu:{" "}
             <span className="text-gold font-semibold">1 500 Kč / měs.</span>
           </p>
@@ -76,10 +90,8 @@ export default function Pricing() {
           {plans.map((plan, i) => (
             <div
               key={plan.name}
-              className={`flex flex-col transition-[opacity,transform] duration-700 ease-smooth ${
-                inView ? "opacity-100 translate-y-0" : "opacity-[0.01] translate-y-3"
-              }`}
-              style={{ transitionDelay: inView ? `${100 + i * 100}ms` : "0ms", willChange: "opacity, transform" }}
+              className={`flex flex-col ${reveal(280 + i * 130).className}`}
+              style={reveal(280 + i * 130).style}
             >
               {/* Badge nad kartou */}
               <div className="h-7 mb-2 flex items-center justify-center text-center">
@@ -111,9 +123,21 @@ export default function Pricing() {
                   </span>
                 </div>
 
+                {/* Feature items — stagger uvnitř každé karty */}
                 <ul className="space-y-3 flex-1">
-                  {plan.features.map((f) => (
-                    <li key={f} className="flex items-center gap-2.5 text-sm">
+                  {plan.features.map((f, fi) => (
+                    <li
+                      key={f}
+                      className="flex items-center gap-2.5 text-sm transition-[opacity,transform] duration-500 ease-smooth"
+                      style={{
+                        opacity: inView ? 1 : 0.01,
+                        transform: inView ? "none" : "translateY(10px)",
+                        transitionDelay: inView
+                          ? `${360 + i * 130 + fi * 55}ms`
+                          : "0ms",
+                        willChange: "opacity, transform",
+                      }}
+                    >
                       <svg
                         width="16"
                         height="16"

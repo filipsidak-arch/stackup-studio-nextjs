@@ -8,7 +8,7 @@ export default function About() {
 
   const reveal = (delay = 0) => ({
     className: `transition-[opacity,transform] duration-700 ease-smooth ${
-      inView ? "opacity-100 translate-y-0" : "opacity-[0.01] translate-y-3"
+      inView ? "opacity-100 translate-y-0" : "opacity-[0.01] translate-y-7"
     }`,
     style: {
       transitionDelay: inView ? `${delay}ms` : "0ms",
@@ -17,7 +17,7 @@ export default function About() {
   });
 
   return (
-    <section id="o-mne" className="py-24 bg-beige px-6">
+    <section id="o-mne" className="py-24 bg-beige px-6 section-enter">
       <div ref={ref} className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Foto */}
         <div
