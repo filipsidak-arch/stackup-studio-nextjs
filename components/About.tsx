@@ -7,8 +7,8 @@ export default function About() {
   const { ref, inView } = useInView();
 
   const reveal = (delay = 0) => ({
-    className: `transition-[opacity,transform] duration-700 ease-smooth ${
-      inView ? "opacity-100 translate-y-0" : "opacity-[0.01] translate-y-7"
+    className: `transition-[opacity,transform] duration-[900ms] ease-gentle ${
+      inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-7"
     }`,
     style: {
       transitionDelay: inView ? `${delay}ms` : "0ms",

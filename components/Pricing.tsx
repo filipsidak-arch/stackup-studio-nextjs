@@ -50,8 +50,8 @@ export default function Pricing() {
   const { ref, inView } = useInView();
 
   const reveal = (delay = 0) => ({
-    className: `transition-[opacity,transform] duration-700 ease-smooth ${
-      inView ? "opacity-100 translate-y-0" : "opacity-[0.01] translate-y-7"
+    className: `transition-[opacity,transform] duration-[900ms] ease-gentle ${
+      inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-7"
     }`,
     style: {
       transitionDelay: inView ? `${delay}ms` : "0ms",
@@ -128,10 +128,11 @@ export default function Pricing() {
                   {plan.features.map((f, fi) => (
                     <li
                       key={f}
-                      className="flex items-center gap-2.5 text-sm transition-[opacity,transform] duration-500 ease-smooth"
+                      className="flex items-center gap-2.5 text-sm"
                       style={{
-                        opacity: inView ? 1 : 0.01,
+                        opacity: inView ? 1 : 0,
                         transform: inView ? "none" : "translateY(10px)",
+                        transition: "opacity 0.9s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.9s cubic-bezier(0.25, 0.1, 0.25, 1)",
                         transitionDelay: inView
                           ? `${360 + i * 130 + fi * 55}ms`
                           : "0ms",

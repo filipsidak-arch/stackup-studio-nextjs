@@ -20,8 +20,8 @@ export default function References() {
   const { ref, inView } = useInView();
 
   const reveal = (delay = 0) => ({
-    className: `transition-[opacity,transform] duration-700 ease-smooth ${
-      inView ? "opacity-100 translate-y-0" : "opacity-[0.01] translate-y-7"
+    className: `transition-[opacity,transform] duration-[900ms] ease-gentle ${
+      inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-7"
     }`,
     style: {
       transitionDelay: inView ? `${delay}ms` : "0ms",
@@ -75,10 +75,11 @@ export default function References() {
               {tags.map((tag, ti) => (
                 <span
                   key={tag}
-                  className="text-xs font-medium px-3 py-1.5 rounded-full bg-forest/8 text-forest transition-[opacity,transform] duration-500 ease-smooth"
+                  className="text-xs font-medium px-3 py-1.5 rounded-full bg-forest/8 text-forest"
                   style={{
-                    opacity: inView ? 1 : 0.01,
+                    opacity: inView ? 1 : 0,
                     transform: inView ? "none" : "translateY(8px)",
+                    transition: "opacity 0.9s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.9s cubic-bezier(0.25, 0.1, 0.25, 1)",
                     transitionDelay: inView ? `${360 + ti * 60}ms` : "0ms",
                   }}
                 >
@@ -154,10 +155,10 @@ export default function References() {
                     i % 2 === 0 ? "bg-white" : "bg-forest/3"
                   }`}
                   style={{
-                    opacity: inView ? 1 : 0.01,
+                    opacity: inView ? 1 : 0,
                     transform: inView ? "none" : "translateY(8px)",
                     transition:
-                      "opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1), transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)",
+                      "opacity 0.9s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.9s cubic-bezier(0.25, 0.1, 0.25, 1)",
                     transitionDelay: inView ? `${760 + i * 75}ms` : "0ms",
                   }}
                 >
@@ -178,10 +179,10 @@ export default function References() {
                   key={row.before}
                   className="rounded-2xl border border-forest/10 bg-white px-5 py-4"
                   style={{
-                    opacity: inView ? 1 : 0.01,
+                    opacity: inView ? 1 : 0,
                     transform: inView ? "none" : "translateY(8px)",
                     transition:
-                      "opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1), transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)",
+                      "opacity 0.9s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.9s cubic-bezier(0.25, 0.1, 0.25, 1)",
                     transitionDelay: inView ? `${760 + i * 75}ms` : "0ms",
                   }}
                 >
