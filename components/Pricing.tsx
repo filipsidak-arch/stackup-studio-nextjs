@@ -32,12 +32,12 @@ const plans = [
   {
     name: "Pro",
     price: "22 000",
-    description: "Web, který pracuje místo vás — s logikou na míru.",
+    description: <>Web, který pracuje místo vás —<br />s logikou na míru.</>,
     features: [
       "Vše ze Standard",
-      "Automatické zpracování rezervací a registrací",
-      "Propojení s externími nástroji",
-      "Vlastní logika na míru",
+      "Automatické zpracování rezervací či registrací",
+      "Propojení s externími nástroji (rezervační formulář, Google tabulky, mapové podklady)",
+      "Vlastní logika na míru (kapacitní semafor, live přehled obsazenosti, podmíněné zobrazení obsahu)",
     ],
     highlight: false,
   },
