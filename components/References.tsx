@@ -225,9 +225,10 @@ export default function References() {
             >
               <span className="text-3xl font-serif text-gold leading-none">&ldquo;</span>
               <p className="italic text-forest/70 text-sm leading-relaxed mt-1">
-                Citát klienta bude doplněn.
+                Nevěděl jsem co čekat, ale výsledek předčil očekávání. Web vypadá profesionálně,
+                funguje skvěle a Filip celý proces vyřešil bez zbytečného složitého řečí.
               </p>
-              <p className="mt-3 text-sm font-semibold text-forest">— CQB HELL</p>
+              <p className="mt-3 text-sm font-semibold text-forest">— Jakub, CQB HELL</p>
             </div>
           </div>
 
