@@ -49,7 +49,7 @@ export default function About() {
           </p>
           <p className="text-forest/70 text-lg leading-relaxed">
             Specializuji se na weby s chytrými funkcemi – rezervační systémy,
-            CMS přes Google Sheets, kapacitní semafory a další řešení, která
+            správa obsahu bez programátora a další řešení na míru, která
             šetří váš čas a zlepšují zákaznickou zkušenost.
           </p>
         </div>
