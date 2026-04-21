@@ -1,0 +1,20 @@
+name: CQB HELL
+subtitle: Největší CQB airsoftová aréna v České Republice
+websiteUrl: https://cqbhell.cz
+quote: Nevěděl jsem co čekat, ale výsledek předčil očekávání. Web vypadá profesionálně, funguje skvěle a Filip celý proces vyřešil bez zbytečného složitého řečí.
+quoteAuthor: Jakub, CQB HELL
+challenge: CQB HELL provozuje airsoft arénu s proměnlivou kapacitou a pravidelnými akcemi. Správa rezervací probíhala telefonicky a přes SMS, kapacita hřiště nebyla online viditelná a aktualizace webu vyžadovala programátora.
+solution: Postavil jsem web s online registračním systémem, kapacitním semaforem v reálném čase a Google Sheets CMS — majitel mění ceny, termíny a texty přímo v tabulce, bez dotyku kódu.
+tags:
+  - Google Sheets CMS
+  - Registrační systém
+  - Kapacitní semafor
+beforeAfter:
+  - before: Žádný web
+    after: Profesionální web s mobilním designem
+  - before: Manuální registrace
+    after: Automatický registrační systém
+  - before: Žádný přehled obsazenosti
+    after: Real-time kapacitní semafor
+  - before: Fotky závislé na vývojáři
+    after: Samostatná správa přes Google Sheets
