@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-interface HeroClientProps {
+export interface HeroClientProps {
   tagline: string;
   subtitle: string;
   ctaText: string;
