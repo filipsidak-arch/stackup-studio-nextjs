@@ -29,5 +29,5 @@ _Tento soubor je pouze pro lokální použití. Není součástí gitu._
 ## TODO
 
 - [ ] Keystatic GitHub mode
-- [ ] Open Graph metadata
+- [x] Open Graph metadata — přidáno do layout.tsx, og-image.png (1200×630) v /public
 - [x] Footer jako standalone komponenta — přesunuto do components/Footer.tsx, Contact.tsx ho importuje

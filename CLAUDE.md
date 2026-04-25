@@ -206,7 +206,7 @@ Git push: git add . && git commit -m "popis" && git push
 
 ## Git push
 
-Po každém dokončeném tasku nebo feature vygeneruj Filipovi příkaz na push, který může přímo zkopírovat do terminálu. Formát:
+Po každém dokončeném tasku nebo feature se zeptej Filipa, jestli chce pushovat na git, a pokud ano, proveď push přímo přes Bash:
 
 ```
 cd ~/claude-projekty/projekty/stackup-studio-nextjs && git add . && git commit -m "<popis změny>" && git push
