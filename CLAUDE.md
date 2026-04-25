@@ -201,3 +201,24 @@ Git push: git add . && git commit -m "popis" && git push
 
 - Keystatic GitHub mode (pro editaci na produkci)
 - Open Graph metadata (og:image, og:type, og:url, twitter:card)
+
+---
+
+## Git push
+
+Po každém dokončeném tasku nebo feature vygeneruj Filipovi příkaz na push, který může přímo zkopírovat do terminálu. Formát:
+
+```
+cd ~/claude-projekty/projekty/stackup-studio-nextjs && git add . && git commit -m "<popis změny>" && git push
+```
+
+Popis změny piš v češtině, stručně (max 1 věta).
+
+## Projektová paměť
+
+Po každé session nebo větší změně aktualizuj soubor _projekt-notes.md:
+- Přidej rozhodnutí která jsme udělali a proč
+- Aktualizuj TODO sekci (zaškrtni hotové, přidej nové)
+- Zapiš technické problémy na které jsme narazili a jak jsme je vyřešili
+
+Soubor _projekt-notes.md není součástí gitu — je to lokální paměť projektu.
