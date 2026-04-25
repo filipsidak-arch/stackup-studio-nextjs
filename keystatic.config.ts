@@ -34,6 +34,32 @@ export default config({
     }),
   },
   singletons: {
+    hero: singleton({
+      label: 'Hero sekce',
+      path: 'content/hero',
+      schema: {
+        tagline: fields.text({ label: 'Tagline (malý text nad nadpisem)' }),
+        subtitle: fields.text({ label: 'Podtitulek', multiline: true }),
+        ctaText: fields.text({ label: 'Text tlačítka' }),
+      },
+    }),
+    about: singleton({
+      label: 'O mně',
+      path: 'content/about',
+      schema: {
+        bio1: fields.text({ label: 'Bio — první odstavec', multiline: true }),
+        bio2: fields.text({ label: 'Bio — druhý odstavec', multiline: true }),
+      },
+    }),
+    contactInfo: singleton({
+      label: 'Kontaktní údaje',
+      path: 'content/contact-info',
+      schema: {
+        email: fields.text({ label: 'E-mail' }),
+        linkedinUrl: fields.url({ label: 'LinkedIn URL' }),
+        linkedinLabel: fields.text({ label: 'LinkedIn zobrazovaný text' }),
+      },
+    }),
     pricing: singleton({
       label: 'Ceník',
       path: 'content/pricing',
