@@ -9,8 +9,8 @@ export default async function Contact() {
   return (
     <ContactClient
       email={contactInfo?.email ?? 'filip@stackupstudio.cz'}
-      linkedinUrl={contactInfo?.linkedinUrl ?? 'https://linkedin.com/in/filipsidak'}
-      linkedinLabel={contactInfo?.linkedinLabel ?? 'linkedin.com/in/filipsidak'}
+      linkedinUrl={contactInfo?.linkedinUrl ?? 'https://linkedin.com/in/filip-sidak'}
+      linkedinLabel={contactInfo?.linkedinLabel ?? 'linkedin.com/in/filip-sidak'}
     />
   );
 }
